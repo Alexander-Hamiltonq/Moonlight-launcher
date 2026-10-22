@@ -96,7 +96,7 @@ object AllSettings : SettingsRegistry() {
     /**
      * 持续性能模式
      */
-    val sustainedPerformance = boolSetting("sustainedPerformance", false)
+    val sustainedPerformance = boolSetting("sustainedPerformance", true)
 
     /**
      * 游戏运行时请求系统切换到同分辨率最高刷新率档位（关闭则回落系统自适应刷新）
@@ -365,10 +365,10 @@ object AllSettings : SettingsRegistry() {
      * 颜色主题色
      * Android 12+ 默认动态主题色
      */
-    val launcherColorTheme = enumSetting(
+        val launcherColorTheme = enumSetting(
         "launcherColorTheme",
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) ColorThemeType.DYNAMIC
-        else ColorThemeType.EMBERMIRE
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) ColorThemeType.CUSTOM
+        else ColorThemeType.CUSTOM
     )
 
     /**
